@@ -4,19 +4,11 @@ import Hero from "./components/Hero";
 
 
 function App() {
-  const [time, setTime] = useState([])
-    useEffect(() => {
-      axios.get('http://worldtimeapi.org/api/ip').then((response)=> {
-          setTime(response.data)
-      }).catch((error) => {
-        console.log(error.message)
-      })
-    }, [])
+ 
 
-    console.log(time)
   return (
     <div>
-        <Hero time={time} />
+        <Hero />
     </div>
   );
 }
