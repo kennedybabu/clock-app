@@ -3,7 +3,9 @@ import React from 'react'
 const Hero = ({time}) => {
   return (
     <div>
-        <h2>{time.abbreviation}</h2>
+        <div className='w-full h-screen day relative'>
+            <div className="overlay absolute w-full h-full left-0 top-0"></div>
+        </div>
     </div>
   )
 }
