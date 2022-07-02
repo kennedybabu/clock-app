@@ -8,6 +8,8 @@ function App() {
     useEffect(() => {
       axios.get('http://worldtimeapi.org/api/ip').then((response)=> {
           setTime(response.data)
+      }).catch((error) => {
+        console.log(error.message)
       })
     }, [])
 

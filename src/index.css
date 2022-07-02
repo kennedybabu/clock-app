@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;400;600;700&display=swap');
+
+
+@layer base {
+  body {
+    @apply font-[Urbanist]
+  }
+}
+
+
 .day {
   background-image: url(./assets/pietro-de-grandi-T7K4aEPoGGk-unsplash\ \(1\).jpg);
   background-size: cover;
