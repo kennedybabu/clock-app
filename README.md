@@ -1,10 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Clock App
+This is a clock application that greets the user depending on  their local time, as well as change the background depending whether its day or night.
 
 ## Available Scripts
 
-In the project directory, you can run:
+clone the repo, run npm start
 
 ### `npm start`
 

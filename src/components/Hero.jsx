@@ -80,45 +80,61 @@ const Hero = () => {
                   <div>{showMore ? <IoIosArrowDropdownCircle className='text-xl md:text-4xl'/>: <FaChevronCircleUp />}</div>
                 </div>
             </div>
-            <div className={showMore ? 'flex flex-col justify-between py-[60px] md:pt-[100px] backdrop-blur-md p-2 text-black w-full mt-2 h-[45vh] md:h-[30vh] md:grid md:grid-cols-2 md:gap-4 bg-[#d6cfcf65]' : 'hidden'}>
-              <div className='w-full flex justify-between uppercase items-center md:flex-col  md:justify-start'>
+            <div className={showMore ? 'flex flex-col justify-between py-[60px] md:pt-[100px] lg:pt-[50px] lg:gap-[30px] backdrop-blur-md p-2 md:px-[100px] lg:px-[200px] text-black w-full mt-2 h-[45vh] md:h-[30vh] md:grid md:grid-cols-2 md:gap-4 bg-[#d6cfcf65]' : 'hidden'}>
+              <div className='w-full flex justify-between uppercase items-center md:items-start md:flex-col  md:justify-start'>
                 <p className='text-sm'>Current Timezone</p>
-                <p className='font-bold md:text-2xl'>{time.timezone}</p>
+                <p className='font-bold md:text-2xl lg:text-3xl'>{time.timezone}</p>
               </div>
-              <div className='w-full flex justify-between uppercase items-center md:flex-col  md:justify-start'>
+              <div className='w-full flex justify-between uppercase items-center md:flex-col md:items-start md:justify-start'>
                 <p className='text-sm'>Day of the year</p>
-                <p className='font-bold md:text-2xl'>{time.day_of_year}</p>
+                <p className='font-bold md:text-2xl lg:text-3xl'>{time.day_of_year}</p>
               </div>
-              <div className='w-full flex justify-between uppercase items-center md:flex-col  md:justify-start'>
+              <div className='w-full flex justify-between uppercase items-center md:flex-col md:items-start md:justify-start'>
                 <p className='text-sm'>Day of the week</p>
-                <p className='font-bold md:text-2xl'>{time.day_of_week}</p>
+                <p className='font-bold md:text-2xl lg:text-3xl'>{time.day_of_week}</p>
               </div>
-              <div className='w-full flex justify-between uppercase items-center md:flex-col md:justify-start'>
+              <div className='w-full flex justify-between uppercase items-center md:flex-col md:items-start md:justify-start'>
                 <p className='text-sm'>week number</p>
-                <p className='font-bold md:text-2xl'>{time.week_number}</p>
+                <p className='font-bold md:text-2xl lg:text-3xl'>{time.week_number}</p>
               </div>
             </div>
         </div>            
     </div> 
     : 
     <div className='w-full h-screen night relative'>
-            <div className="overlay absolute w-full h-full left-0 top-0"></div>
-            {/* container */}
-            <div className='w-full text-white h-full absolute left-0 top-0 flex flex-col justify-end'>
-                <div className="px-4 w-full">
-                <div className='text-xl tracking-wider uppercase w-full flex items-center text-white'><BsBrightnessHighFill  className='mr-2'/> {greeting}</div>
-                <h2 className='text-[90px] font-bold'>{hrs}:{mins} <span className='text-white text-xl'>{time.abbreviation}</span></h2>
-                <p className='uppercase font-bold py-4'>In {time.timezone}</p>
-                <div className='items-center flex w-[90px] py-[5px] justify-between px-2 bg-white uppercase text-gray-800 rounded-[25px]'>
-                  <div>more</div> 
-                  <div><IoIosArrowDropdownCircle className='text-xl'/></div>
-                </div>
-                </div>
-                <div className='backdrop-blur-lg p-2 h-[45vh]  bg-[#00000065] mt-2'>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatibus cupiditate ratione nam! Eius, aspernatur.</p>
-                </div>
-            </div>            
+    <div className="overlay absolute w-full h-full left-0 top-0"></div>
+    {/* container */}
+    <div className='w-full text-white h-full absolute left-0 top-0 flex flex-col justify-end'>
+        <div className='px-4 w-full '>
+            <div className='text-xl md:text-3xl tracking-wider uppercase w-full flex items-center text-white'>{dayTime ? <BsBrightnessHighFill  className='mr-2'/> : <BsMoonFill />} {greeting}</div>
+              <h2 className='text-[90px] md:text-[180px] font-bold'>{hoursAndMinutes} <span className='text-white text-xl md:text-3xl'>{time.abbreviation}</span></h2>
+            <p className='uppercase font-bold py-4 md:py-2 md:text-2xl'>In {time.timezone}</p>
+            <div onClick={handleMore} className='md:text-3xl cursor-pointer mb-[50px] md:mb-[80px] items-center flex w-[90px] md:w-[160px] py-[5px] justify-between px-4 bg-white uppercase text-gray-800 rounded-[25px]'>
+              {showMore ? <p>Less</p> : <p>More</p>}
+              <div>{showMore ? <IoIosArrowDropdownCircle className='text-xl md:text-4xl'/>: <FaChevronCircleUp />}</div>
+            </div>
         </div>
+        <div className={showMore ? 'flex flex-col justify-between py-[60px] md:pt-[100px] lg:pt-[50px] lg:gap-[30px] backdrop-blur-md p-2 md:px-[100px] lg:px-[200px] text-white w-full mt-2 h-[45vh] md:h-[30vh] md:grid md:grid-cols-2 md:gap-4 bg-[#20202065]' : 'hidden'}>
+          <div className='w-full flex justify-between uppercase items-center md:items-start md:flex-col  md:justify-start'>
+            <p className='text-sm'>Current Timezone</p>
+            <p className='font-bold md:text-2xl lg:text-3xl'>{time.timezone}</p>
+          </div>
+          <div className='w-full flex justify-between uppercase items-center md:flex-col md:items-start md:justify-start'>
+            <p className='text-sm'>Day of the year</p>
+            <p className='font-bold md:text-2xl lg:text-3xl'>{time.day_of_year}</p>
+          </div>
+          <div className='w-full flex justify-between uppercase items-center md:flex-col md:items-start md:justify-start'>
+            <p className='text-sm'>Day of the week</p>
+            <p className='font-bold md:text-2xl lg:text-3xl'>{time.day_of_week}</p>
+          </div>
+          <div className='w-full flex justify-between uppercase items-center md:flex-col md:items-start md:justify-start'>
+            <p className='text-sm'>week number</p>
+            <p className='font-bold md:text-2xl lg:text-3xl'>{time.week_number}</p>
+          </div>
+        </div>
+    </div>            
+</div> 
+   
         }
     </div>
   )
